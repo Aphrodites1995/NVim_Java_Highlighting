@@ -31,7 +31,18 @@ let purple = "#C678DD"
 let cyan = "#56B6C2"
 let white = "#ABB2BF"
 
-
+" nord
+let orange = "#d08770"
+let black = "#2e3440"
+let red = "#bf616a"
+let green = "#a3be8c"
+let yellow = "#ebcb8b"
+let blue = "#81a1c1"
+"let blue = "#5e8eac"
+let purple = "#b48ead"
+let cyan = "#88c0d0"
+let white = "#d8dee9"
+let greenish = "#8fbcbb"
 
 " you may chage the color according to your will :)
 
@@ -39,10 +50,12 @@ let white = "#ABB2BF"
 " main color (for left over words)
 syn match main "\w"
 execute "highlight main ctermfg=4  guifg=".red
+"execute "highlight main ctermfg=4  guifg=".cyan
 
 " numbers
 syn match posNum "\d"
 execute "highlight posNum ctermfg=4  guifg=".orange
+"execute "highlight posNum ctermfg=4  guifg=".purple
 
 " method names()
 syn match class ".\w*\((\)\@="
@@ -51,6 +64,7 @@ execute "highlight class ctermfg=4  guifg=".blue
 "execute "highlight names which contains numbers
 syn match main "\v(\a)\w*\d"
 execute "highlight main ctermfg=4  guifg=".red
+"execute "highlight main ctermfg=4  guifg=".cyan
 
 
 "all regrex works
@@ -59,7 +73,7 @@ execute "highlight main ctermfg=4  guifg=".red
 " \v(^import\s+)@<=.*;
 
 " imported packages 
-syn match importName "\v(^import\s+)@<=.*;"
+syn match importName "(^import\s+)@<=.*;"
 execute "highlight importName ctermfg=4  guifg=".yellow
 
 " import 
@@ -67,7 +81,7 @@ syn match importWord "import "
 execute "highlight importWord ctermfg=4  guifg=".purple
 
 " package name
-syn match packageName "\v(^package\s+)@<=.*;"
+syn match packageName "(^package\s+)@<=.*;"
 execute "highlight packageName ctermfg=4  guifg=".yellow
 
 " package 
@@ -76,6 +90,7 @@ execute "highlight packageWord ctermfg=4  guifg=".purple
 
 "ex: int, double, char
 execute "highlight javaType ctermfg=4  guifg=".purple
+"execute "highlight javaType ctermfg=4  guifg=".greenish
 
 "ex: static, throws
 execute "highlight javaStorageClass ctermfg=4  guifg=".purple
@@ -109,11 +124,13 @@ execute "highlight javaRepeat ctermfg=4  guifg=".purple
 
 "true flase
 execute "highlight javaBoolean ctermfg=4  guifg=".orange
+"execute "highlight javaBoolean ctermfg=4  guifg=".purple
 
 
 " null
 syn match null "\v[ =]null[; ]"
 execute "highlight null ctermfg=4  guifg=".orange
+execute "highlight null ctermfg=4  guifg=".purple
 
 
 " this super
